@@ -1,0 +1,6 @@
+2026-04-11 16:24:23 [INFO ] [Hooks] - [setUp] Scenario Started: Verify whether the user is able to register into the application by providing all the fields
+2026-04-11 16:24:23 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-11 16:24:31 [INFO ] [Browser] - [takeScreenshot] Exception has Occured while taking screenshot
+2026-04-11 16:25:55 [INFO ] [Hooks] - [setUp] Scenario Started: Verify whether the user is able to register into the application by providing all the fields
+2026-04-11 16:25:55 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-11 16:26:00 [INFO ] [Browser] - [takeScreenshot] Exception has Occured while taking screenshot
