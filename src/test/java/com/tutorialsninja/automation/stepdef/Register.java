@@ -1,45 +1,92 @@
 package com.tutorialsninja.automation.stepdef;
 
+import java.util.Map;
+
 import com.tutorialsninja.automation.base.Base;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.*;
+import com.tutorialsninja.automation.framework.Elements;
+import com.tutorialsninja.automation.pages.AccountSuccessPage;
+import com.tutorialsninja.automation.pages.HeadersSection;
+import com.tutorialsninja.automation.pages.RegisterPage;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 
 public class Register {
+	HeadersSection headersSection = new HeadersSection();
+	RegisterPage registerPage =new RegisterPage();
+	AccountSuccessPage accountsuccessPage = new AccountSuccessPage();
 	
-@Given("^ I launch the application$")
-
+@Given("^I launch the application")
 public void i_launch_the_application() {
 	Base.driver.get(Base.reader.getUrl());
+	}
+@And("^I navigate to Account Registration page")
+	public void i_navigate_to_Account_Registraion_page() {
+		Elements.click(HeadersSection.myAccountLink);
+		Elements.click(HeadersSection.register);
+	}
+@When("^I provide all the below valid details")
+public void i_provide_all_the_below_valid_deatils(DataTable dataTable) {
+
+    RegisterPage.enterAllDetails(dataTable,"unqiue");
+}
+@And("^I select the Privacy Policy")
+public void i_select_the_Privacy_Policy() {
+	
+	Elements.click(RegisterPage.privacyPolicy);
 	
 }
-@When("^I provide all the below valid details$")
-public void i_provide_all_the_below_valid_details(DataTable arg1) throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-    // For automatic transformation, change DataTable to one of
-    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-    // E,K,V must be a scalar (String, Integer, Date, enum etc)
-    throw new PendingException();
+@And ("^I click on Contibue Button")
+public void i_click_on_continue_Button() {
+	
+	Elements.click(RegisterPage.continueButton);
+	
+}
+@Then("^I should see that the user account has succesfully created")
+public void i_should_see_that_the_User_account_has_successfully_created() {
+	Assert.assertTrue(	Elements.isDisplayed(AccountSuccessPage.successBreadcrumb));
+		
 }
 
-@When("^I select the Privacy Policy$")
-public void i_select_the_Privacy_Policy() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+@Then("^I should see that the User Account is not created$")
+public void i_should_see_that_the_User_Account_is_not_created() {
+	 
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.registerBreadcrumb));
 }
 
-@When("^I click on Continue button$")
-public void i_click_on_Continue_button() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+@Then("^I should see the error messages informaing the user to fill the mandatory fields$")
+public void i_should_see_the_error_messages_informaing_the_user_to_fill_the_mandatory_fields() {
+	
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.firstNameWarning));
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.LastnameWarning));
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.emailWarning));
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.telephoneWarning));
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.passwordwarning));
+	Assert.assertTrue(Elements.isDisplayed(RegisterPage.mainWarning));
 }
 
-@Then("^I should see that the User Account has successfully created$")
-public void i_should_see_that_the_User_Account_has_successfully_created() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+@And("^I subscribe to Newsletter$")
+	public void i_subscribe_to_Newsletter() {
+	
+	Elements.click(RegisterPage.yesToNewsletter);
 }
 
-
+@When("^I provide the below duplicate details$")
+public void i_provide_the_below_duplicate_details(DataTable dataTable) {
+	
+	RegisterPage.enterAllDetails(dataTable,"duplicate");
+	
 }
+
+@Then("^I should see that the User is restriced from creating duplicate account$")
+public void i_should_see_that_the_user_is_restricted_from_Craeting_duplicate_account() {
+	
+	Assert.assertTrue(Elements.VerifyTextEquals(RegisterPage.mainWarning, "Warning: E-Mail address is already registered!"));
+}
+}
+
