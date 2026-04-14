@@ -44,3 +44,23 @@
 2026-04-12 23:32:06 [INFO ] [Browser] - [startBrowser] Chrome Browser is Started1727420902
 2026-04-12 23:32:09 [INFO ] [Hooks] - [closeBrowser] Scenario Completed: Verify whether the user is restricted from registring a duplicate account
 2026-04-12 23:32:09 [INFO ] [Hooks] - [closeBrowser] Scenario Status is: FAILED
+2026-04-14 16:24:25 [INFO ] [Hooks] - [setUp] Scenario Started: Verify whether the User is able to login with valid credentials
+2026-04-14 16:24:25 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-14 16:24:30 [INFO ] [Browser] - [startBrowser] Chrome Browser is Started382044126
+2026-04-14 16:24:35 [INFO ] [Hooks] - [closeBrowser] Scenario Completed: Verify whether the User is able to login with valid credentials
+2026-04-14 16:24:35 [INFO ] [Hooks] - [closeBrowser] Scenario Status is: UNDEFINED
+2026-04-14 16:24:35 [INFO ] [Hooks] - [setUp] Scenario Started: Verify that the User is not able to login with invalid credentials
+2026-04-14 16:24:35 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-14 16:24:37 [INFO ] [Browser] - [startBrowser] Chrome Browser is Started1758962399
+2026-04-14 16:24:40 [INFO ] [Hooks] - [closeBrowser] Scenario Completed: Verify that the User is not able to login with invalid credentials
+2026-04-14 16:24:40 [INFO ] [Hooks] - [closeBrowser] Scenario Status is: UNDEFINED
+2026-04-14 16:24:40 [INFO ] [Hooks] - [setUp] Scenario Started: Verify that the User is not able to login without providing credentials
+2026-04-14 16:24:40 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-14 16:24:41 [INFO ] [Browser] - [startBrowser] Chrome Browser is Started523528914
+2026-04-14 16:24:44 [INFO ] [Hooks] - [closeBrowser] Scenario Completed: Verify that the User is not able to login without providing credentials
+2026-04-14 16:24:44 [INFO ] [Hooks] - [closeBrowser] Scenario Status is: UNDEFINED
+2026-04-14 16:24:44 [INFO ] [Hooks] - [setUp] Scenario Started: Verify that the User is able to reset forgotten password
+2026-04-14 16:24:44 [INFO ] [Browser] - [startBrowser] Selected Browser is: chrome
+2026-04-14 16:24:46 [INFO ] [Browser] - [startBrowser] Chrome Browser is Started1973471376
+2026-04-14 16:24:49 [INFO ] [Hooks] - [closeBrowser] Scenario Completed: Verify that the User is able to reset forgotten password
+2026-04-14 16:24:49 [INFO ] [Hooks] - [closeBrowser] Scenario Status is: UNDEFINED
