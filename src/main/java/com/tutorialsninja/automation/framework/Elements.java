@@ -1,4 +1,4 @@
-drpackage com.tutorialsninja.automation.framework;
+package com.tutorialsninja.automation.framework;
 
 import java.util.List;
 import java.util.Random;
@@ -241,6 +241,11 @@ public class Elements {
 
 	public static void ZoomBy100percentage() {
 		Waits.tryJavascript("document.body.style.zoom='100%'");
+	}
+
+	public static boolean VerifyTextEquals(boolean verifyTextEquals) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
